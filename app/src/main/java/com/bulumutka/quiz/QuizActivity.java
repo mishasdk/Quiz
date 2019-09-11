@@ -3,6 +3,7 @@ package com.bulumutka.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +13,8 @@ import com.bulumutka.quiz.model.QuizManager;
 import com.bulumutka.quiz.model.QuizManagerImp;
 
 public class QuizActivity extends AppCompatActivity {
+
+    private final String TAG = "QuizActivity class";
 
     private TextView textView;
     private QuizManager quizManager;
@@ -24,6 +27,30 @@ public class QuizActivity extends AppCompatActivity {
         initActivity();
         onNext(new View(this));
     }
+
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        Log.d(TAG, "onPause() enter");
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        Log.d(TAG, "onResume() enter");
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        Log.d(TAG, "onStop() enter");
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        Log.d(TAG, "onDestroy() enter");
+//    }
 
     protected void initActivity() {
         quizManager = new QuizManagerImp();
