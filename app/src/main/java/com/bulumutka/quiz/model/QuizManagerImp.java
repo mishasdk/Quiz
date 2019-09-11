@@ -2,11 +2,12 @@ package com.bulumutka.quiz.model;
 
 import com.bulumutka.quiz.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class QuizManagerImp implements QuizManager {
+public class QuizManagerImp implements QuizManager, Serializable {
     private final TrueFalse[] questionsBank = new TrueFalse[]{
             new TrueFalse(R.string.question_oceans, true),
             new TrueFalse(R.string.question_mideast, false),
@@ -50,5 +51,6 @@ public class QuizManagerImp implements QuizManager {
             questionsSequence.add(i);
         Collections.shuffle(questionsSequence, new Random());
         currentIndex = 0;
+        currentQuestion = questionsBank[questionsSequence.get(currentIndex)];
     }
 }
