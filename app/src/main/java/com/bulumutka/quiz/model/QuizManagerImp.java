@@ -29,7 +29,7 @@ public class QuizManagerImp implements QuizManager, Serializable {
     }
 
     @Override
-    public TrueFalse getNextQuestion() {
+    public void NextQuestion() {
         int size = questionsBank.length;
         if (currentIndex == size)
             initQuestionsSequence();
@@ -37,7 +37,6 @@ public class QuizManagerImp implements QuizManager, Serializable {
             int index = questionsSequence.get(currentIndex++);
             currentQuestion = questionsBank[index];
         }
-        return currentQuestion;
     }
 
     @Override

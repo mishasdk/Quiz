@@ -1,13 +1,12 @@
 package com.bulumutka.quiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bulumutka.quiz.model.QuizManager;
 import com.bulumutka.quiz.model.QuizManagerImp;
@@ -45,7 +44,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void onClickNextButton(View view) {
-        quizManager.getNextQuestion();
+        quizManager.NextQuestion();
         updateTextView();
     }
 
