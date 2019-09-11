@@ -3,6 +3,7 @@ package com.bulumutka.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initActivity(savedInstanceState);
         updateTextView();
     }
@@ -51,7 +53,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void initActivity(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             quizManager = (QuizManager) savedInstanceState.getSerializable(QUIZ_MANAGER);
-        } else {
+        } else {    
             quizManager = new QuizManagerImp();
         }
         textView = findViewById(R.id.questionTextView);

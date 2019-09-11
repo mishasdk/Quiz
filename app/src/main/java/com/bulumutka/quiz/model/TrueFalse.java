@@ -1,6 +1,8 @@
 package com.bulumutka.quiz.model;
 
-public class TrueFalse {
+import java.io.Serializable;
+
+public class TrueFalse implements Serializable {
     private int question;
     private boolean correctAnswer;
 

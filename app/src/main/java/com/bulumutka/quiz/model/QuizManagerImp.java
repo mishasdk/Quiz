@@ -33,9 +33,10 @@ public class QuizManagerImp implements QuizManager, Serializable {
         int size = questionsBank.length;
         if (currentIndex == size)
             initQuestionsSequence();
-
-        int index = questionsSequence.get(currentIndex++);
-        currentQuestion = questionsBank[index];
+        else {
+            int index = questionsSequence.get(currentIndex++);
+            currentQuestion = questionsBank[index];
+        }
         return currentQuestion;
     }
 
