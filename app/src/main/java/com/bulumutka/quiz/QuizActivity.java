@@ -66,6 +66,6 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     protected void updateTextView() {
-        textView.setText(quizManager.getCurrentQuestion().getQuestion());
+        textView.setText(quizManager.getCurrentQuestion().question);
     }
 }

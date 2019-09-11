@@ -25,7 +25,7 @@ public class QuizManagerImp implements QuizManager, Serializable {
 
     @Override
     public Boolean checkForCorrectAnswer(Boolean answer) {
-        return answer == currentQuestion.getCorrectAnswer();
+        return answer == currentQuestion.correctAnswer;
     }
 
     @Override
