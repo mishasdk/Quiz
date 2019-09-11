@@ -52,6 +52,6 @@ public class QuizManagerImp implements QuizManager, Serializable {
             questionsSequence.add(i);
         Collections.shuffle(questionsSequence, new Random());
         currentIndex = 0;
-        currentQuestion = questionsBank[questionsSequence.get(currentIndex)];
+        currentQuestion = questionsBank[questionsSequence.get(currentIndex++)];
     }
 }
