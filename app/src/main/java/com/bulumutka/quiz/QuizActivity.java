@@ -24,7 +24,6 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initActivity(savedInstanceState);
         updateTextView();
     }
@@ -53,7 +52,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void initActivity(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             quizManager = (QuizManager) savedInstanceState.getSerializable(QUIZ_MANAGER);
-        } else {    
+        } else {
             quizManager = new QuizManagerImp();
         }
         textView = findViewById(R.id.questionTextView);
