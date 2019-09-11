@@ -20,24 +20,27 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button_true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
+            android:onClick="onClickAnswerButton"
             android:text="@string/button_true" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onClickAnswerButton"
             android:text="@string/button_false" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/nextButton"
+        android:id="@+id/button_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:onClick="onNext"
         android:text="@string/button_next" />
 
 </LinearLayout>

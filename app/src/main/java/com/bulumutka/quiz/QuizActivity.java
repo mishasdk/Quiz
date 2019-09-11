@@ -13,10 +13,6 @@ import com.bulumutka.quiz.model.QuizManagerImp;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private Button trueButton;
-    private Button falseButton;
-    private Button nextButton;
-
     private TextView textView;
     private QuizManager quizManager;
 
@@ -26,44 +22,27 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initActivity();
-        OnNext();
+        onNext(new View(this));
     }
 
     protected void initActivity() {
         quizManager = new QuizManagerImp();
         textView = findViewById(R.id.questionTextView);
-        trueButton = findViewById(R.id.button1);
-        falseButton = findViewById(R.id.button2);
-        nextButton = findViewById(R.id.nextButton);
+    }
 
-        trueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (quizManager.checkForCorrectAnswer(true)) {
-                    CorrectAlert();
-                } else {
-                    IncorrectAlert();
-                }
-            }
-        });
+    public void onClickAnswerButton(View view) {
+        Button thisButton = (Button) view;
+        Boolean answer = thisButton.getId() == R.id.button_true;
+        if (quizManager.checkForCorrectAnswer(answer)) {
+            CorrectAlert();
+        } else {
+            IncorrectAlert();
+        }
+    }
 
-        falseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (quizManager.checkForCorrectAnswer(false)) {
-                    CorrectAlert();
-                } else {
-                    IncorrectAlert();
-                }
-            }
-        });
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                OnNext();
-            }
-        });
+    public void onNext(View view) {
+        quizManager.getNextQuestion();
+        updateTextView();
     }
 
     protected void CorrectAlert() {
@@ -75,12 +54,7 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-    protected void OnNext() {
-        quizManager.getNextQuestion();
-        updateView();
-    }
-
-    protected void updateView() {
+    protected void updateTextView() {
         textView.setText(quizManager.getCurrentQuestion().getQuestion());
     }
 }
